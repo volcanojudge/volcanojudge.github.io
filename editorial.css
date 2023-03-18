@@ -1,0 +1,108 @@
+/* Global Styles */
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Set maximum width of content */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Style headings */
+h1, h2, h3 {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Style links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Editorial Styles */
+
+/* Set background color for the page */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Style the header */
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Style the navigation menu */
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #fff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Style the main content area */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article {
+  flex: 1;
+  margin: 10px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.article h2 {
+  margin-top: 0;
+}
+
+.article p {
+  line-height: 1.5;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* Style the footer */
+footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
