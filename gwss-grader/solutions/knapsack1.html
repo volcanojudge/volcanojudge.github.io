@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWSS Grader Editorial - Knapsack Practice 1</title>
+    <link rel="stylesheet" href="/editorial.css">
+  </head>
+  <body>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "80%" } } },
+      messageStyle: "none"
+    });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+    <header>
+      <h1>Solution for knapsack1</h1>
+      <small>powered by Volcano Judge</small>
+    </header>
+    <div class="container">
+      <main class="main">
+        <article class="article">
+          <h2>Solution to Knapsack Practice 1</h2>
+          <p><small>Editorial by: <a href="https://gwssgrader.pythonanywhere.com/user/Savir">Savir</a></small></p>
+          <p>This problem is a template 0-1 knapsack dynamic programming problem. The basic idea is to solve the problem by calculating answers to subproblems of the main problem.
+          <br><br>In particular, for this problem, we can let $dp_{i_j}$ be the maximum sum of happiness values when considering the first $i$ items, and with a capacity of $j$ kg. Then, we can calculate
+          $dp_{i_j}$ using subproblems as follows:
+          $$dp_{i_j} = max(dp_{i_j}, dp_{i-1_j-w_i} + v_i)$$ (For all $1 \le i \le N$ and $1 \le j \le M$)<br><br>
+          The time complexity and space complexity of the approach is $O(NM)$. It turns out we can reduce the space complexity to $O(M)$ by "reversing the loop". If we loop from $M$ to $w_i$ for each $i$,
+           we can let $dp_j$ be the maximum sum of happiness values with a knapsack capacity of $j$ kg. $dp_j$ can now be calculated as follows:
+           $$dp_j = max(dp_j, dp_{j-w_i} + v_i)$$ (For all $1 \le i \le N$ and $1 \le j \le M$)<br><br>
+           Now, our final answer is $dp_M$.<br><br>Code in Python 3:<br><br><script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fvolcanojudge%2Fvolcanojudge.github.io%2Fblob%2Fmain%2Fgwss-grader%2Fsolutions%2Fknapsack1.py&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script></p>
+        </article>
+      </main>
+    </div>
+    <footer>
+      <p>&copy; 2023 Volcano Judge.</p>
+    </footer>
+  </body>
+</html>
